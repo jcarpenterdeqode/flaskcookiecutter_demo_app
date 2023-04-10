@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  pythonapp:
+    container_name: {{cookiecutter.project_name}}
+    image: {{cookiecutter.project_name}}:latest
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=True
+      - SECRET_KEY= sdsardsgrb5fr34v
+      - SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://{{cookiecutter.db_password}}:postgres@db:5432/{{cookiecutter.db_name}}
+    depends_on:
+      - db
+  
+  db:
+    container_name: {{cookiecutter.postgres_container}}
+    image: postgres:12
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD={{cookiecutter.db_password}}
+      - POSTGRES_USER={{cookiecutter.db_user}}
+      - POSTGRES_DB={{cookiecutter.db_name}}
+      - HOST=localhost
+    
+    volumes:
+      - {{cookiecutter.postgres_container}}:/var/lib/postgresql/data
+
+
+volumes:
+  {{cookiecutter.postgres_container}}:
+    driver: local
