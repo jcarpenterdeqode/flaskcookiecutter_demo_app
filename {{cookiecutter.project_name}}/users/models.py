@@ -2,6 +2,7 @@
 import datetime
 from flask_bcrypt import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
+
 from {{cookiecutter.project_name}}.app import db
 
 # The User class is a data model for user accounts

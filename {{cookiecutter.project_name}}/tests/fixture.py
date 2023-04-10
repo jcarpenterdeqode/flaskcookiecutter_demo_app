@@ -5,6 +5,7 @@ import json
 import pytest
 from dotenv import load_dotenv
 from pytest_factoryboy import register
+
 from {{cookiecutter.project_name}}.users.models import User
 from {{cookiecutter.project_name}}.app import create_app
 from {{cookiecutter.project_name}}.app import db as _db
