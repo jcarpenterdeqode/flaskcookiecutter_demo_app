@@ -59,7 +59,7 @@ def create_app(testing=False):
     app.config_class = Config
     api = Api(app=app)
 
-    from users.routes import create_authentication_routes
+    from {{cookiecutter.project_name}}.users.routes import create_authentication_routes
 
     create_authentication_routes(api=api)
 

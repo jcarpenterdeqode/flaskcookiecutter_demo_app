@@ -1,5 +1,5 @@
 from flask_restful import Api
-from users.views import LoginApi, SignUpApi
+from {{cookiecutter.project_name}}.users.views import LoginApi, SignUpApi
 
 
 def create_authentication_routes(api: Api):

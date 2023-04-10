@@ -2,7 +2,7 @@
 
 FROM python:3.8-slim-buster
 
-WORKDIR /cutterapp
+WORKDIR /{{cookiecutter.project_name}}
 RUN apt-get update \
     && apt-get -y install libpq-dev gcc
 COPY requirements.txt requirements.txt

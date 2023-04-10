@@ -1,5 +1,5 @@
 import factory
-from users.models import User
+from {{cookiecutter.project_name}}.users.models import User
 
 
 class UserFactory(factory.Factory):

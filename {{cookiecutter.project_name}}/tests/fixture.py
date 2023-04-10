@@ -4,12 +4,11 @@
 import json
 import pytest
 from dotenv import load_dotenv
-
-from users.models import User
-from app import create_app
-from app import db as _db
 from pytest_factoryboy import register
-from tests.factories import UserFactory
+from {{cookiecutter.project_name}}.users.models import User
+from {{cookiecutter.project_name}}.app import create_app
+from {{cookiecutter.project_name}}.app import db as _db
+from {{cookiecutter.project_name}}.tests.factories import UserFactory
 
 
 register(UserFactory)

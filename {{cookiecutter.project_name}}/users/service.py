@@ -2,12 +2,12 @@
 import json
 import jwt
 import datetime
-from app import db
+from {{cookiecutter.project_name}}.app import db
 from os import environ
-from users.models import User
+from {{cookiecutter.project_name}}.users.models import User
 from flask_bcrypt import generate_password_hash
-from utils.common import generate_response, TokenGenerator
-from users.validation import (
+from {{cookiecutter.project_name}}.utils.common import generate_response, TokenGenerator
+from {{cookiecutter.project_name}}.users.validation import (
     CreateLoginInputSchema,
     CreateResetPasswordEmailSendInputSchema,
     CreateSignupInputSchema, ResetPasswordInputSchema,

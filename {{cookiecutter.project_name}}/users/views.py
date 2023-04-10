@@ -1,7 +1,7 @@
 from flask import Response
 from flask_restful import Resource
 from flask import request, make_response
-from users.service import create_user, login_user
+from {{cookiecutter.project_name}}.users.service import create_user, login_user
 
 
 class SignUpApi(Resource):
