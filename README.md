@@ -67,7 +67,7 @@ Your app is running in port 5000 in local machine.
 
 #### Using application
 
-we have 2 urls for loging and registration of user:
+we have 2 urls for login and registration of user:
 
 ## http://127.0.0.1:5000/api/auth/register/
 
