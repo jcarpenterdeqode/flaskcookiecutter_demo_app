@@ -75,8 +75,8 @@ Schema :
 
 {
     "username" : "testuser",
-    "email" : "ram@gmail.com",
-    "password" : "Ram@123"
+    "email" : "test@gmail.com",
+    "password" : "Test@123"
 }
 
 ## http://127.0.0.1:5000/api/auth/login/
@@ -84,8 +84,8 @@ Schema :
 Schema :
 
 {
-    "email" : "ram@gmail.com",
-    "password" : "Ram@123"
+    "email" : "test@gmail.com",
+    "password" : "Test@123"
 }
 
 
