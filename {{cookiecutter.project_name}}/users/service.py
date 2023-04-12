@@ -1,19 +1,21 @@
 
-import json
-import jwt
 import datetime
-
+import json
 from os import environ
 
+import jwt
 from {{cookiecutter.project_name}}.app import db
 from {{cookiecutter.project_name}}.users.models import User
-
-from {{cookiecutter.project_name}}.utils.common import generate_response, TokenGenerator
 from {{cookiecutter.project_name}}.users.validation import (
-    CreateLoginInputSchema,
+    CreateLoginInputSchema, 
     CreateResetPasswordEmailSendInputSchema,
-    CreateSignupInputSchema, ResetPasswordInputSchema,
-)
+    CreateSignupInputSchema, 
+    ResetPasswordInputSchema
+    )
+from {{cookiecutter.project_name}}.utils.common import (
+    TokenGenerator,
+    generate_response
+    )
 
 
 def create_user(request, input_data):
@@ -84,4 +86,3 @@ def login_user(request, input_data):
         return generate_response(
             message="Password is wrong", status=400
         )
-
