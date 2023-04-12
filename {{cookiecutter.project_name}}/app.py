@@ -23,12 +23,10 @@ def create_app(testing=False):
     app.config["MAIL_PASSWORD"] = os.environ.get("EMAIL_HOST_PASSWORD")
     app.config["MAIL_USE_TLS"] = False
     app.config["MAIL_USE_SSL"] = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = environ.get("SQLALCHEMY_DATABASE_URI")
-    app.config['FLASK_DEBUG'] = environ.get("FLASK_DEBUG")
 
     mail = Mail(app)
     
-    app.config_class = Config
+    app.config.from_object(Config)
     api = Api(app=app)
 
     from {{cookiecutter.project_name}}.users.routes import create_authentication_routes
@@ -46,4 +44,3 @@ def create_app(testing=False):
 if __name__ == "__main__":
     app = create_app()
     app.run(host="0.0.0.0", port=5000)
-    
